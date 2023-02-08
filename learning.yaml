@@ -1,0 +1,9 @@
+---
+  - name: learning playbook
+    hosts: all
+    become: no
+    tasks:
+      - name: create a empty file
+        ansible.builtin.file:
+          path: /tem/1.txt
+          state: touch

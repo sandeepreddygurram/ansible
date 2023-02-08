@@ -1,0 +1,10 @@
+---
+  - name: game of life
+    hosts: all
+    become: yes
+    tasks: 
+      - name: update ubuntu package
+        ansible.builtin.apt:
+          name: openjdk-8-jdk
+          update_cache: yes
+          state: present
