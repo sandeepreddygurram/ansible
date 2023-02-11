@@ -1,0 +1,14 @@
+- name: learning loops
+  become: no
+  hosts: all
+  vars:
+    files:
+      - /tmp/4.txt
+      - /tmp/5.txt
+      - /tmp/6.txt
+  tasks:
+    - name: create files
+      file: 
+        path: "{{ item }}"
+        state: touch
+      loop: "{{ files }}"

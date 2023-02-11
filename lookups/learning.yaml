@@ -1,0 +1,10 @@
+---
+- name: learning lookups
+  become: no
+  hosts: all
+  tasks:
+    - name: print all shell files
+      debug:
+        msg: "{{ item }}"
+      with_fileglob:
+        - /tmp/test/*.sh
